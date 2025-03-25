@@ -1,15 +1,13 @@
 import React from "react";
-import KeyFeaturesMain from "./components/Services/KeyFeaturesMain";
-import KeyBenefits from "./components/Services/KeyBenefits";
+import Hero from "./components/Hero/Hero";
+import Services from "./components/Services/Serives";
 import Footer from "./components/Footer/Footer";
-import Hero from "./components/HeroSection/HeroSection";
 
 const App = () => {
   return (
     <>
       <Hero />
-      <KeyFeaturesMain />
-      <KeyBenefits />
+      <Services />
       <Footer />
     </>
   );

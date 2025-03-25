@@ -4,6 +4,8 @@
     height: 80px;
     padding: 0px 12px;
     background: linear-gradient(to right, #5690ec, #a855f7);
+    position: relative;
+    z-index: 1002; /* Highest z-index to stay on top */
 }
 
 .navbarWrapper {
@@ -64,6 +66,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease; /* Add smooth transition for all changes */
 }
 
 .navbarList {
@@ -138,60 +141,105 @@
 @media screen and (max-width: 968px) {
     .navbar {
         height: auto;
-        min-height: 80px;
+        min-height: 70px; /* Slightly reduced height */
     }
 
     .navbarWrapper {
-        padding: 10px 20px;
+        padding: 8px 16px;
     }
 
     .navbarTitle {
-        font-size: 24px;
+        font-size: 22px;
     }
 
-    .navbarLogo {
-        height: 60px;
+    .subTitle {
+        font-size: 12px;
+    }
+
+    .navbarListItem {
+        font-size: 18px;
+        padding: 8px;
     }
 }
 
 @media screen and (max-width: 768px) {
     .hamburger {
         display: flex;
+        z-index: 1001; /* Increased z-index */
     }
 
     .navbarRight {
         position: fixed;
-        top: 100px;
-        right: -100%;
+        top: -100vh; /* Start from above the viewport */
+        left: 0;
+        right: 0;
+        transform: none; /* Remove horizontal transform */
         flex-direction: column;
-        background-color: blueviolet;
+        background: linear-gradient(to bottom, #5690ec, #a855f7);
         width: 100%;
-        height: calc(100vh - 100px);
-        transition: right 0.3s ease;
-        max-height: 400px;
+        /* height: 100vh; */
+        transition: top 0.3s ease-in-out;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000; /* Below navbar but above other content */
+        padding-top: 80px; /* Space for navbar */
     }
 
     .navbarRight.active {
-        right: 0;
+        top: 0; /* Slide down to top of viewport */
+        transform: none;
+    }
+
+    /* Remove the overlay since menu will be behind navbar */
+    .navbarRight::before {
+        display: none;
     }
 
     .navbarList {
+        margin-top: 20px; /* Add some space below navbar */
+        width: 100%;
         flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
+        align-items: center; /* Center align items */
+        padding: 20px;
     }
 
     .navbarListItem {
-        margin: 15px 0;
+        margin: 10px 0;
+        width: 90%; /* Slightly narrower than full width */
+        text-align: center;
+        padding: 12px 20px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .navbarListItem:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .navbarListItem::after {
+        display: none; /* Remove underline effect on mobile */
     }
 }
 
 @media screen and (max-width: 480px) {
-    .navbarTitle {
-        font-size: 20px;
+    .navbar {
+        min-height: 60px;
     }
 
-    .navbarLogo {
-        height: 50px;
+    .navbarTitle {
+        font-size: 18px;
+    }
+
+    .subTitle {
+        font-size: 10px;
+        margin-top: -5px;
+    }
+
+    .navbarRight {
+        padding-top: 60px; /* Adjust for smaller navbar height */
+    }
+
+    .navbarWrapper {
+        padding: 8px 12px;
+        margin: 0px 10px;
     }
 }

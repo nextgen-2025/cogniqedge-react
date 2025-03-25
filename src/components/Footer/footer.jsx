@@ -41,7 +41,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="footer">
+    <div className="footer">
       <div className="footer-left">
         <h2 className="footer-logo">CogniEdge</h2>
         <p className="footer-description">
@@ -101,7 +101,7 @@ function Footer() {
         <p>NexGen Infratech Solutions LLP. All right reserved.</p>
       
       </div>
-    </footer>
+    </div>
   );
 }
 

@@ -1,17 +1,20 @@
 import React from "react";
-import Hero from "./components/Hero/Hero";
-import Services from "./components/Services/Serives";
-import Navbar from "./components/navbar/Navbar";
-import Bottom from "./components/Bottom/Bottom";
+import { Routes,Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Services />
-      <Bottom />
+
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path='/contact' element={<Contact />} />
+      <Route path="*" element={<NotFound /> } />
+    </Routes>
+
     </>
   );
 };

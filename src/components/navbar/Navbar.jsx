@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./navbar.css";
+import { Link } from "react-router-dom";
 // import ceLogo from "../../assets/ce-logo.png";
 
 const Navbar = () => {
@@ -29,7 +30,9 @@ const Navbar = () => {
           <ul className="navbarList">
             {navbarItems.map((item, index) => (
               <li key={index} className="navbarListItem">
-                {item}
+                <Link to={item === "Home" ? "/" : `/${item.toLowerCase()}`}>
+                  {item}
+                </Link>
               </li>
             ))}
           </ul>

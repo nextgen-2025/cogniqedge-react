@@ -87,7 +87,7 @@ function Footer() {
       <div className="footer-right">
         <h4>Contact Us</h4>
         {contactInfo.map((info, index) => (
-          <p key={index}>
+          <p className='flex' key={index}>
             <span className="contact-icon">{info.icon}</span>
             <span className="contact-text">{info.text}</span>
           </p>

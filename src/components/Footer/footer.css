@@ -1,5 +1,4 @@
 /* Footer Container */
-@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
 
 .footer {
     background-color: #1D1D1F; /* Dark background */
@@ -9,12 +8,6 @@
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
     justify-content: space-between;
     font-family: sans-serif; /* Adjust to match your design */
-  }
-  @font-face {
-    font-family: 'Tecture';
-    src: url('./fonts/Tecture.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
   }
   /* Footer Sections */
   .footer-left, 
@@ -98,8 +91,7 @@
 
   }
   
-  .footer-middle a:hover {
-  }
+  
   
   /* Right Section */
   .footer-right h4 {

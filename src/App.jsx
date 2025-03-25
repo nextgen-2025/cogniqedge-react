@@ -1,14 +1,18 @@
-import React from 'react'
-import KeyFeaturesMain from './components/Services/KeyFeaturesMain'
-import KeyBenefits from './components/Services/KeyBenefits'
+import React from "react";
+import KeyFeaturesMain from "./components/Services/KeyFeaturesMain";
+import KeyBenefits from "./components/Services/KeyBenefits";
+import Footer from "./components/Footer/Footer";
+import Hero from "./components/HeroSection/HeroSection";
 
 const App = () => {
   return (
     <>
-    <KeyFeaturesMain />
-    <KeyBenefits />
+      <Hero />
+      <KeyFeaturesMain />
+      <KeyBenefits />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

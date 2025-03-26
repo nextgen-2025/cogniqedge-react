@@ -1,0 +1,68 @@
+.contact{
+    background: black;
+    /* outline: 2px solid blue; */
+}
+
+.contactWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://mediaassets.cbre.com/-/media/cbre/media/files/sprinklr/adobestock_267083342.jpg) center center no-repeat;
+    background-size: cover;
+    padding: 3rem 1rem;
+}
+
+.contactTitle{
+    color: #fff;
+    font-size: 56px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.breadcrumb span{
+    margin-left: 5px;
+}
+
+.breadcrumb a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.formWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    /* margin-top: 100px; */
+    width: 100%;
+    padding: 48px 12px;
+}
+
+.contactUsTitle{
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #892CDC;
+}
+
+.formTitle{
+    margin-bottom: 24px;
+    font-size: 34px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px #b98ef9;
+}
+
+.formWrapper Form{
+    background: #fff;
+}

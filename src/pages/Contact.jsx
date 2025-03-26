@@ -5,7 +5,7 @@ import ContactHero from '../components/contact-us/ContactHero'
 const Contact = () => {
   return (
     <>
-    <Navbar />
+    <Navbar/>
     <ContactHero/>
     </>
   )

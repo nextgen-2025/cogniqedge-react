@@ -15,7 +15,7 @@ const Form = () => {
             <div className="formGroup">
                 <textarea id="message" placeholder="Enter your message..."></textarea>
             </div>
-            <button className='bg-red-400 py-2 px-2 rounded-[5px]' type="submit">Send</button>
+            <button className='bg-red-400 py-2 px-2 rounded-[5px]' type="submit">Send Message</button>
         </form>
     </div>
   )

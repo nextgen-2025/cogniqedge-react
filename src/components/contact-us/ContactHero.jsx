@@ -6,6 +6,7 @@ const ContactHero = () => {
   return (
     <div className="contact">
       <div className="contactWrapper">
+        <h1 className="contactTitle">Get in Touch</h1>
       
         <div className="breadcrumb">
           <a href="/">Home</a>

@@ -15,8 +15,7 @@ const ContactHero = () => {
         </div>
       </div>
       <div className="formWrapper">
-        <h3 className="contactUsTitle">Contact Us</h3>
-        <h1 className="formTitle">Send Us a Message</h1>
+       
         <Form/>
       </div>
     </div>

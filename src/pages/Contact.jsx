@@ -6,9 +6,7 @@ import Bottom from '../components/Bottom/Bottom'
 const Contact = () => {
   return (
     <>
-    <Navbar/>
     <ContactHero/>
-    <Bottom/>
     </>
   )
 }

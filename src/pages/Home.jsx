@@ -8,11 +8,11 @@ import Marquee from '../components/Marquee/Marquee'
 const Home = () => {
   return (
     <>
-     <Navbar />
+
       <Hero />
       <Service /> 
       <Marquee />
-      <Bottom />
+
     </>
   )
 }

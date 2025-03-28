@@ -6,7 +6,7 @@ const ContactHero = () => {
   return (
     <div className="contact">
       <div className="contactWrapper">
-        <h1 className="contactTitle">Get in Touch</h1>
+        <h1 className="contactTitle">Contact Us</h1>
       
         <div className="breadcrumb">
           <a href="/">Home</a>
@@ -15,8 +15,6 @@ const ContactHero = () => {
         </div>
       </div>
       <div className="formWrapper">
-        <h3 className="contactUsTitle">Contact Us</h3>
-        <h1 className="formTitle">Send Us a Message</h1>
         <Form/>
       </div>
     </div>

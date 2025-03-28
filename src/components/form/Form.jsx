@@ -63,22 +63,22 @@ const Form = () => {
       icon: <FaEnvelope className="w-5 h-5" />,
       title: "Email Us",
       details: "info@cogniedge.in"
-    },
-    {
-      icon: <FaPhone className="w-5 h-5" />,
-      title: "Call Us",
-      details: "+91 XXX XXX XXXX"
-    },
-    {
-      icon: <FaClock className="w-5 h-5" />,
-      title: "Working Hours",
-      details: "Mon - Fri: 9:00 AM - 6:00 PM"
     }
+    // {
+    //   icon: <FaPhone className="w-5 h-5" />,
+    //   title: "Call Us",
+    //   details: "+91 XXX XXX XXXX"
+    // },
+    // {
+    //   icon: <FaClock className="w-5 h-5" />,
+    //   title: "Working Hours",
+    //   details: "Mon - Fri: 9:00 AM - 6:00 PM"
+    // }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-[1600px] mx-auto"> {/* Increased width from 1400px to 1600px */}
+    <div className="rounded bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-[1800px]"> {/* Increased max width */}
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -89,34 +89,29 @@ const Form = () => {
           </p>
         </div>
 
-        {/* Two Column Layout with increased gap and padding */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        {/* Two Column Layout with increased width */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-full">
           {/* Left Column - Contact Details */}
-          <div className="space-y-8 p-10 lg:p-12 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50">
-            <div className="space-y-8"> {/* Increased spacing */}
+          <div className="w-full h-56 p-8 lg:p-10 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50">
+            <div className="space-y-6">
               {contactDetails.map((detail, index) => (
                 <div key={index} className="flex items-start space-x-6">
-                  <div className="text-purple-400 mt-1">
-                    {React.cloneElement(detail.icon, { className: "w-6 h-6" })} {/* Larger icons */}
+                  <div className="text-purple-400 mt-1 flex-shrink-0">
+                    {React.cloneElement(detail.icon, { className: "w-6 h-6" })}
                   </div>
-                  <div>
-                    <h3 className="text-lg text-white font-semibold">{detail.title}</h3>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-lg text-white font-semibold truncate">{detail.title}</h3>
                     <p className="text-gray-400 mt-2 text-base">{detail.details}</p>
                   </div>
                 </div>
               ))}
             </div>
-
-            {/* Map or Additional Content */}
-            <div className="mt-10 aspect-video rounded-xl bg-gray-700/50 p-6">
-              <p className="text-center text-gray-400 text-lg">Map will be integrated here</p>
-            </div>
           </div>
 
           {/* Right Column - Form */}
-          <div>
+          <div className="w-full">
             <form onSubmit={handleSubmit} 
-                  className="space-y-8 bg-gray-800/50 backdrop-blur-sm p-10 lg:p-12 rounded-xl 
+                  className="space-y-6 bg-gray-800/50 backdrop-blur-sm p-8 lg:p-10 rounded-xl 
                            border border-gray-700/50 shadow-xl">
               <div className="space-y-5">
                 {/* Name Input */}

@@ -36,28 +36,29 @@ const Bottom = () => {
 
   const contactInfo = [
     { icon: <FaMapMarkerAlt />, text: "Navi Mumbai" },
-    { icon: <FaPhone />, text: "+123 456 7890" },
+   
     { icon: <FaEnvelope />, text: "info@cogniedge.in" },
   ];
   return (
     <div className="footer">
       <div className="footer-left">
-        <h2 className="footer-logo">CogniEdge</h2>
+        <h2 className="footer-logo">
+                COGNIQEDGE PLATFORMS AND DIGITAL <br />SOLUTIONS INDIA PRIVATE
+                LIMITED
+              </h2>
         <p className="footer-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sulla facere
-          delectus qui placeat inventore consectetur repellendus cupiditate
-          delectus.
+        Powering the Future at the CogniqEdge. CogniqEdge is creating cutting-edge <br/>  digital infrastructure enabling innovative solutions for both consumer and <br/> enterprise segments nationwide.
         </p>
-        <div className="footer-social-icons">
+       {/*<div className="footer-social-icons">
           {socialLinks.map((social, index) => (
             <a key={index} href={social.url} className="social-icon">
               {social.icon}
             </a>
           ))}
-        </div>
+        </div>*/}
       </div>
 
-      <div className="footer-middle">
+{/*      <div className="footer-middle">
         <h4>Short Link</h4>
         <ul>
           {shortLinks.map((link, index) => (
@@ -78,7 +79,7 @@ const Bottom = () => {
           ))}
         </ul>
       </div>
-
+*/}
       <div className="footer-right">
         <h4>Contact Us</h4>
         {contactInfo.map((info, index) => (
@@ -91,9 +92,9 @@ const Bottom = () => {
 
       <div className="footer-bottom">
         <span>
-          <FaCopyright />
+        
         </span>
-        <p>NexGen Infratech Solutions LLP. All right reserved.</p>
+      
       </div>
     </div>
   );

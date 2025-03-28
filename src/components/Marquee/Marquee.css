@@ -1,0 +1,60 @@
+.marquee-container {
+  /* Container for both marquees; the gap is provided below via margin */
+}
+
+/* Common marquee container styling */
+.feedback-marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #f9f9f9; /* Optional background color */
+  padding: 20px 0;
+  margin-bottom: 20px; /* Gap between the two marquees */
+}
+
+.feedback-marquee-content {
+  display: flex;
+  align-items: center;
+  animation: feedbackMarquee 20s linear infinite;
+}
+
+/* For the second marquee, reverse the animation direction */
+.feedback-marquee-reverse .feedback-marquee-content {
+  animation-direction: reverse;
+}
+
+/* Each feedback item: title on top, paragraph below */
+.feedback-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 40px; /* Space between each feedback item */
+}
+
+/* Title styling */
+.feedback-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 5px 0; /* Small gap below the title */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Paragraph styling */
+.feedback-item p {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+  margin-right: 2rem; /* Optional right spacing */
+  white-space: nowrap; /* Prevent text wrapping; remove if wrapping is desired */
+  text-align: left;
+}
+
+/* Keyframes for continuous left-to-right scroll */
+@keyframes feedbackMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

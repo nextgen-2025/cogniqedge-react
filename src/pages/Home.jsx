@@ -1,7 +1,7 @@
-import React from 'react'
-import Hero from '../components/Hero/Hero'
-import Service from '../components/Services/Serives'
-import Form from '../components/Form/Form'
+import React from "react";
+import Hero from "../components/Hero/Hero";
+import Service from "../components/Services/Serives";
+import Form from "../components/ContactForm/Form";
 
 const Home = () => {
   return (
@@ -10,7 +10,7 @@ const Home = () => {
       <Service />
       <Form />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

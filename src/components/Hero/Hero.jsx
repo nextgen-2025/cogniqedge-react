@@ -10,7 +10,7 @@ const HeroSection = () => {
 
   return (
     <div className="flex flex-col items-center justify-center text-center p-4 sm:p-6 md:p-34 bg-[#0F1625]">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent max-w-6xl mx-auto leading-tight">
+      <h1 className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent max-w-6xl mx-auto leading-tight">
         Powering the Future at the Edge
       </h1>
 

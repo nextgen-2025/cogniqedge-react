@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbar from '../components/navbar/Navbar'
-import ContactHero from '../components/contact-us/ContactHero'
-import Bottom from '../components/Bottom/Bottom'
+import ContactHero from '../components/Contact/ContactHero'
 
 const Contact = () => {
   return (

@@ -78,7 +78,7 @@ const Form = () => {
 
   return (
     <div className="rounded bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-[1800px]"> {/* Increased max width */}
+      <div className="container mx-auto max-w-[1200px]"> {/* Increased max width */}
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">

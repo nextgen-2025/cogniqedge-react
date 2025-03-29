@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaClock } from 'react-icons/fa';
-import './form.css';
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -57,7 +56,7 @@ const Form = () => {
     {
       icon: <FaMapMarkerAlt className="w-5 h-5" />,
       title: "Our Location",
-      details: "Navi Mumbai, Maharashtra, India"
+      details: "Mumbai, Maharashtra, India"
     },
     {
       icon: <FaEnvelope className="w-5 h-5" />,
@@ -77,7 +76,7 @@ const Form = () => {
   ];
 
   return (
-    <div className="rounded bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-[1200px]"> {/* Increased max width */}
         {/* Section Header */}
         <div className="text-center mb-16">

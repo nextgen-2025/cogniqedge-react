@@ -12,7 +12,7 @@ import {
 
 const Bottom = () => {
   const contactInfo = [
-    { icon: <FaMapMarkerAlt />, text: "Navi Mumbai" },
+    { icon: <FaMapMarkerAlt />, text: "Mumbai, Maharashtra, India" },
     { icon: <FaEnvelope />, text: "info@cogniedge.in" },
   ];
 

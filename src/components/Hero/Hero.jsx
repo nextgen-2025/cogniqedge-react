@@ -10,11 +10,11 @@ const HeroSection = () => {
 
   return (
     <div className="flex flex-col items-center justify-center text-center p-4 sm:p-6 md:p-34 bg-[#0F1625]">
-      <h1 className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent max-w-6xl mx-auto leading-tight">
+      <h1 className="font-[Tektur] text-3xl sm:text-5xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent max-w-6xl mx-auto leading-tight">
         Powering the Future at the Edge
       </h1>
 
-      <p className="text-base sm:text-lg md:text-xl text-white max-w-2xl mx-auto mb-8 leading-relaxed">
+      <p className="font-[Jost] text-base sm:text-lg md:text-xl text-white max-w-2xl mx-auto mb-8 leading-relaxed">
         CogniqEdge is powering national digital infrastructure providing
         innovative digital solutions in consumer and enterprise segments.
       </p>

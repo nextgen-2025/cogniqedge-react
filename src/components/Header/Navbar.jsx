@@ -6,7 +6,7 @@ const Navbar = () => {
   const navbarItems = ["Home", "Contact"];
 
   return (
-    <nav className="bg-gradient-to-r from-gray-950 to-gray-900 text-gray-300 p-2">
+    <nav className="bg-gradient-to-r from-blue-500 to-purple-500 text-gray-300 p-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo and Title with Link */}
@@ -17,7 +17,7 @@ const Navbar = () => {
                   Cogn<span className="underline">iq</span>Edge
                 </span>
               </h1>
-              <span className="text-[10px] tracking-wider text-gray-400">
+              <span className="text-[10px] tracking-wider text-white">
                 REDEFINING DIGITAL EXPERIENCES
               </span>
             </Link>
@@ -29,7 +29,7 @@ const Navbar = () => {
               <Link
                 key={index}
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className="text-[1.1rem] text-gray-300 hover:text-purple-400 transition-colors duration-200"
+                className="text-[1.1rem] font-semibold text-white hover:text-purple-900 transition-colors duration-200"
               >
                 {item}
               </Link>

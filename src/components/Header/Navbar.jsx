@@ -6,7 +6,7 @@ const Navbar = () => {
   const navbarItems = ["Home", "Contact"];
 
   return (
-    <nav className="bg-gradient-to-r from-gray-950 to-gray-900 text-gray-300">
+    <nav className="bg-gradient-to-r from-gray-950 to-gray-900 text-gray-300 p-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo and Title with Link */}
@@ -29,7 +29,7 @@ const Navbar = () => {
               <Link
                 key={index}
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className="text-gray-300 hover:text-purple-400 transition-colors duration-200"
+                className="text-[1.1rem] text-gray-300 hover:text-purple-400 transition-colors duration-200"
               >
                 {item}
               </Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
             isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'
           } md:hidden transition-all duration-200 ease-in-out absolute left-0 right-0 bg-gray-950/95 backdrop-blur-sm`}
         >
-          <div className="px-4 pt-2 pb-3 space-y-1 border-t border-gray-800">
+          <div className="text-right px-4 pt-2 pb-3 space-y-1 border-t border-gray-800">
             {navbarItems.map((item, index) => (
               <Link
                 key={index}

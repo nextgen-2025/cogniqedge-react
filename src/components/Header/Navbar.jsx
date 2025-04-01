@@ -40,8 +40,8 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 
-                         hover:text-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+              className="inline-flex items-center justify-center p-2 rounded-md text-zinc-100 
+                         hover:text-zinc-800 focus:outline-none focus:ring-2 focus:ring-purple-500/50"
               aria-expanded={isMenuOpen}
               aria-label="Main menu"
             >

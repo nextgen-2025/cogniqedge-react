@@ -36,9 +36,9 @@ const KeyFeatures = () => {
     },
     {
       icon: <MdCloud className="w-12 h-12" />,
-      title: "Sustainable Digital Transformation",
+      title: "Sustainability focused Digital Transformation",
       description:
-        "Enabling sustainable practices and innovations with a responsibility to the environment.",
+        "Innovative Solutions with a responsibility to the environment.",
     },
     {
       icon: <MdDeviceHub className="w-12 h-12" />,
@@ -62,9 +62,7 @@ const KeyFeatures = () => {
                        transition-all duration-500 ease-in-out"
           >
             <div
-              className="absolute inset-0 bg-purple-600 
-                          transform -translate-y-full group-hover:translate-y-0
-                          transition-transform duration-500 ease-in-out"
+              className="absolute inset-0"
             ></div>
             <div className="relative z-10">
               <div

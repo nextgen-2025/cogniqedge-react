@@ -79,10 +79,10 @@ const Form = () => {
     <div className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-[1200px]"> {/* Increased max width */}
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Get In Touch
-          </h2>
+        <div className="text-center mb-16 w-full">
+  <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent inline-block">
+    Send Us a Message
+  </h2>
           <p className="mt-3 text-lg text-gray-400">
             Have questions? We'd love to hear from you.
           </p>

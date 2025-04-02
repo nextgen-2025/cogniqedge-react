@@ -4,6 +4,7 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaClock } from "react-icons/fa";
 const Form = () => {
   const [formData, setFormData] = useState({
     name: "",
+    organisation: "",
     email: "",
     subject: "",
     message: "",
@@ -43,12 +44,29 @@ const Form = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+  
     if (validateForm()) {
-      console.log("Form submitted:", formData);
-      // Add your form submission logic here
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      try {
+        const response = await fetch("http://localhost:5000/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+  
+        const data = await response.json();
+        if (response.ok) {
+          alert("Message sent successfully!");
+          setFormData({ name: "", organisation: "", email: "", subject: "", message: "" });
+        } else {
+          alert("Error sending message: " + data.error);
+        }
+      } catch (error) {
+        alert("Failed to send message. Please try again later.");
+      }
     }
   };
 
@@ -75,17 +93,13 @@ const Form = () => {
     // }
   ];
 
+  
+
   return (
     <div className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-[1200px]">
         {" "}
         {/* Increased max width */}
-        {/* Section Header */}
-        <div className="text-center mb-16 w-full">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent inline-block">
-            Send Us a Message
-          </h2>
-        </div>
         {/* Two Column Layout with increased width */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-full">
           {/* Left Column - Contact Details */}
@@ -144,7 +158,33 @@ const Form = () => {
                     <p className="mt-1 text-sm text-red-400">{errors.name}</p>
                   )}
                 </div>
-
+                {/* Organisation */}
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-300 mb-1"
+                  >
+                    Name of Organisation
+                  </label>
+                  <input
+                    type="text"
+                    id="organisation"
+                    value={formData.organisation}
+                    onChange={handleChange}
+                    placeholder="Name of Organisation"
+                    className={`w-full px-4 py-2.5 bg-gray-700/50 border 
+                               ${
+                                 errors.name
+                                   ? "border-red-500"
+                                   : "border-gray-600"
+                               } 
+                               rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500/50 
+                               text-white placeholder-gray-400 transition-all duration-300`}
+                  />
+                  {errors.name && (
+                    <p className="mt-1 text-sm text-red-400">{errors.name}</p>
+                  )}
+                </div> 
                 {/* Email Input */}
                 <div>
                   <label

@@ -1,42 +1,3 @@
-// const express = require("express");
-// const nodemailer = require("nodemailer");
-// const cors = require("cors");
-// const bodyParser = require("body-parser");
-// require("dotenv").config();
-
-// const app = express();
-// app.use(cors());
-// app.use(bodyParser.json());
-
-// app.post("/send-email", async (req, res) => {
-//   const { name, organisation, email, subject, message } = req.body;
-
-//   const transporter = nodemailer.createTransport({
-//     service: "gmail",
-//     auth: {
-//       user: process.env.EMAIL, // Your Gmail
-//       pass: process.env.PASSWORD, // App Password (not Gmail password)
-//     },
-//   });
-
-//   const mailOptions = {
-//     from: `${email}`,
-//     to: "verma.aman1008@gmail.com", // Change to your target email
-//     subject: `New Contact Form Submission - ${subject}`,
-//     text: `Name: ${name}\nOrganisation: ${organisation}\nEmail: ${email}\nMessage: ${message}`,
-//   };
-
-//   try {
-//     await transporter.sendMail(mailOptions);
-//     res.status(200).json({ message: "Email sent successfully!" });
-//   } catch (error) {
-//     res.status(500).json({ error: "Failed to send email." });
-//   }
-// });
-
-// const PORT = 5000;
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
 const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
@@ -58,9 +19,9 @@ app.post("/send-email", async (req, res) => {
   const { name, organisation, email, subject, message } = req.body;
 
   const mailOptions = {
-    from: `"${name}" <${process.env.EMAIL}>`, // Authenticated email (must match SMTP)
-    replyTo: `${email}`, // User's actual email (so you can reply to them)
-    to: process.env.EMAIL, // Your business email where you receive messages
+    from: `"${name}" <${email}>`,  // Shows user's name but uses your authenticated email
+    replyTo: email,  // This ensures replies go to the user
+    to: "aman1007v@gmail.com", // Your business email where you receive messages
     subject: subject,
     text: `Name: ${name}\nOrganisation: ${organisation}\nEmail: ${email}\nMessage: ${message}`,
   };

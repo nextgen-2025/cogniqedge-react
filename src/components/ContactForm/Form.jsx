@@ -46,7 +46,7 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (validateForm()) {
       try {
         const response = await fetch("http://localhost:5000/send-email", {
@@ -56,11 +56,17 @@ const Form = () => {
           },
           body: JSON.stringify(formData),
         });
-  
+
         const data = await response.json();
         if (response.ok) {
           alert("Message sent successfully!");
-          setFormData({ name: "", organisation: "", email: "", subject: "", message: "" });
+          setFormData({
+            name: "",
+            organisation: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
         } else {
           alert("Error sending message: " + data.error);
         }
@@ -93,7 +99,12 @@ const Form = () => {
     // }
   ];
 
-  
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
+  fetch(`${API_BASE_URL}/api/data`)
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error("Error:", error));
 
   return (
     <div className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
@@ -184,7 +195,7 @@ const Form = () => {
                   {errors.name && (
                     <p className="mt-1 text-sm text-red-400">{errors.name}</p>
                   )}
-                </div> 
+                </div>
                 {/* Email Input */}
                 <div>
                   <label

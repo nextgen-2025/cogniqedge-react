@@ -16,14 +16,14 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post("/send-email", async (req, res) => {
-  const { name, organisation, email, subject, message } = req.body;
+  const { name, email, subject, message } = req.body;
 
   const mailOptions = {
     from: `"${name}" <${email}>`,  // Shows user's name but uses your authenticated email
     replyTo: email,  // This ensures replies go to the user
     to: "aman1007v@gmail.com", // Your business email where you receive messages
-    subject: subject,
-    text: `Name: ${name}\nOrganisation: ${organisation}\nEmail: ${email}\nMessage: ${message}`,
+    subject: "New Submission Form",
+    text: `Name: ${name}\nEmail: ${email}\nDesignation: ${subject}\nMessage: ${message}`,
   };
 
   try {

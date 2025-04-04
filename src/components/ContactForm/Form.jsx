@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaClock } from "react-icons/fa";
+import { FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 
 const Form = () => {
+
+  const [status, setStatus] = useState(undefined);
+
   const [formData, setFormData] = useState({
     name: "",
-    organisation: "",
     email: "",
     subject: "",
     message: "",
@@ -59,16 +61,17 @@ const Form = () => {
 
         const data = await response.json();
         if (response.ok) {
-          alert("Message sent successfully!");
+          setStatus("success");
+          // alert("Message sent successfully!");
           setFormData({
             name: "",
-            organisation: "",
             email: "",
             subject: "",
             message: "",
           });
         } else {
-          alert("Error sending message: " + data.error);
+          // alert("Error sending message: " + data.error);
+          setStatus("error" + data.error);
         }
       } catch (error) {
         alert("Failed to send message. Please try again later.");
@@ -87,19 +90,9 @@ const Form = () => {
       title: "Email Us",
       details: "info@cogniedge.in",
     },
-    // {
-    //   icon: <FaPhone className="w-5 h-5" />,
-    //   title: "Call Us",
-    //   details: "+91 XXX XXX XXXX"
-    // },
-    // {
-    //   icon: <FaClock className="w-5 h-5" />,
-    //   title: "Working Hours",
-    //   details: "Mon - Fri: 9:00 AM - 6:00 PM"
-    // }
   ];
 
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+  const API_BASE_URL = import.meta.env.REACT_APP_URL;
 
   fetch(`${API_BASE_URL}/api/data`)
     .then((response) => response.json())
@@ -155,7 +148,7 @@ const Form = () => {
                     id="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder="Your name"
                     className={`w-full px-4 py-2.5 bg-gray-700/50 border 
                                ${
                                  errors.name
@@ -170,7 +163,7 @@ const Form = () => {
                   )}
                 </div>
                 {/* Organisation */}
-                <div>
+                {/* <div>
                   <label
                     htmlFor="name"
                     className="block text-sm font-medium text-gray-300 mb-1"
@@ -195,7 +188,7 @@ const Form = () => {
                   {errors.name && (
                     <p className="mt-1 text-sm text-red-400">{errors.name}</p>
                   )}
-                </div>
+                </div> */}
                 {/* Email Input */}
                 <div>
                   <label
@@ -209,7 +202,7 @@ const Form = () => {
                     id="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="john@example.com"
+                    placeholder="example@email.com"
                     className={`w-full px-4 py-2.5 bg-gray-700/50 border 
                                ${
                                  errors.email
@@ -224,20 +217,20 @@ const Form = () => {
                   )}
                 </div>
 
-                {/* Subject Input */}
+                {/* Designation Input */}
                 <div>
                   <label
                     htmlFor="subject"
                     className="block text-sm font-medium text-gray-300 mb-1"
                   >
-                    Subject
+                    Designation
                   </label>
                   <input
                     type="text"
                     id="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="How can we help?"
+                    placeholder="Designation"
                     className={`w-full px-4 py-2.5 bg-gray-700/50 border 
                                ${
                                  errors.subject
@@ -266,7 +259,7 @@ const Form = () => {
                     id="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Your message here..."
+                    placeholder="Your message here"
                     rows="4"
                     className={`w-full px-4 py-2.5 bg-gray-700/50 border 
                                ${
@@ -297,6 +290,19 @@ const Form = () => {
               >
                 Send Message
               </button>
+              {
+                status === "success" && (
+                  <p className="text-green-500 text-center">
+                    Message sent successfully!
+                  </p>
+                )}
+              {
+                status === "error" && (
+                  <p className="text-red-500 text-center">
+                    Error sending message. Please try again.
+                  </p>
+                )
+              }
             </form>
           </div>
         </div>

@@ -12,6 +12,8 @@ const Form = () => {
     message: "",
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const [errors, setErrors] = useState({});
 
   const validateForm = () => {
@@ -48,6 +50,7 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true); 
 
     if (validateForm()) {
       try {
@@ -61,6 +64,7 @@ const Form = () => {
 
         const data = await response.json();
         if (response.ok) {
+          setIsLoading(false);
           setStatus("success");
           // alert("Message sent successfully!");
           setFormData({
@@ -70,12 +74,16 @@ const Form = () => {
             message: "",
           });
         } else {
+          setIsLoading(false);
           // alert("Error sending message: " + data.error);
           setStatus("error" + data.error);
         }
       } catch (error) {
+        setIsLoading(false);
         alert("Failed to send message. Please try again later.");
       }
+    } else{
+      setIsLoading(false);
     }
   };
 
@@ -281,6 +289,7 @@ const Form = () => {
               {/* Submit Button */}
               <button
                 type="submit"
+                disabled={isLoading}
                 className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 
                          text-white rounded-lg font-semibold transform
                          hover:from-blue-600 hover:to-purple-600 
@@ -288,7 +297,7 @@ const Form = () => {
                          transition-all duration-300 hover:scale-[1.02]
                          shadow-lg hover:shadow-purple-500/25"
               >
-                Send Message
+                 {isLoading ? "Submitting..." : "Send Message"} {/* Show loading text */}
               </button>
               {
                 status === "success" && (

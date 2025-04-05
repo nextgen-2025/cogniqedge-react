@@ -8,6 +8,8 @@ const Form = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",     // Add phone
+    company: "",   // Add company
     subject: "",
     message: "",
   });
@@ -26,6 +28,16 @@ const Form = () => {
       tempErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       tempErrors.email = "Email is invalid";
+    }
+
+    if (!formData.phone.trim()) {
+      tempErrors.phone = "Phone number is required";
+    } else if (!/^\d{10}$/.test(formData.phone.trim())) {
+      tempErrors.phone = "Please enter a valid 10-digit phone number";
+    }
+
+    if (!formData.company.trim()) {
+      tempErrors.company = "Company name is required";
     }
 
     if (!formData.subject.trim()) {
@@ -70,6 +82,8 @@ const Form = () => {
           setFormData({
             name: "",
             email: "",
+            phone: "",
+            company: "", 
             subject: "",
             message: "",
           });
@@ -142,7 +156,8 @@ const Form = () => {
               className="space-y-6 bg-gray-800/50 backdrop-blur-sm p-8 lg:p-10 rounded-xl 
                            border border-gray-700/50 shadow-xl"
             >
-              <div className="space-y-5">
+              {/* Form Inputs Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {/* Name Input */}
                 <div>
                   <label
@@ -170,33 +185,7 @@ const Form = () => {
                     <p className="mt-1 text-sm text-red-400">{errors.name}</p>
                   )}
                 </div>
-                {/* Organisation */}
-                {/* <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-300 mb-1"
-                  >
-                    Name of Organisation
-                  </label>
-                  <input
-                    type="text"
-                    id="organisation"
-                    value={formData.organisation}
-                    onChange={handleChange}
-                    placeholder="Name of Organisation"
-                    className={`w-full px-4 py-2.5 bg-gray-700/50 border 
-                               ${
-                                 errors.name
-                                   ? "border-red-500"
-                                   : "border-gray-600"
-                               } 
-                               rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500/50 
-                               text-white placeholder-gray-400 transition-all duration-300`}
-                  />
-                  {errors.name && (
-                    <p className="mt-1 text-sm text-red-400">{errors.name}</p>
-                  )}
-                </div> */}
+
                 {/* Email Input */}
                 <div>
                   <label
@@ -225,8 +214,64 @@ const Form = () => {
                   )}
                 </div>
 
-                {/* Designation Input */}
+                {/* Phone Input */}
                 <div>
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-gray-300 mb-1"
+                  >
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Your phone number"
+                    className={`w-full px-4 py-2.5 bg-gray-700/50 border 
+                               ${
+                                 errors.phone
+                                   ? "border-red-500"
+                                   : "border-gray-600"
+                               } 
+                               rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500/50 
+                               text-white placeholder-gray-400 transition-all duration-300`}
+                  />
+                  {errors.phone && (
+                    <p className="mt-1 text-sm text-red-400">{errors.phone}</p>
+                  )}
+                </div>
+
+                {/* Company Input */}
+                <div>
+                  <label
+                    htmlFor="company"
+                    className="block text-sm font-medium text-gray-300 mb-1"
+                  >
+                    Company Name
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Your company name"
+                    className={`w-full px-4 py-2.5 bg-gray-700/50 border 
+                               ${
+                                 errors.company
+                                   ? "border-red-500"
+                                   : "border-gray-600"
+                               } 
+                               rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500/50 
+                               text-white placeholder-gray-400 transition-all duration-300`}
+                  />
+                  {errors.company && (
+                    <p className="mt-1 text-sm text-red-400">{errors.company}</p>
+                  )}
+                </div>
+
+                {/* Designation Input - Full Width */}
+                <div className="sm:col-span-2">
                   <label
                     htmlFor="subject"
                     className="block text-sm font-medium text-gray-300 mb-1"
@@ -255,8 +300,8 @@ const Form = () => {
                   )}
                 </div>
 
-                {/* Message Input */}
-                <div>
+                {/* Message Input - Full Width */}
+                <div className="sm:col-span-2">
                   <label
                     htmlFor="message"
                     className="block text-sm font-medium text-gray-300 mb-1"

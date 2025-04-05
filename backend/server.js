@@ -1,9 +1,9 @@
 const express = require("express");
+const app = express();
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 require("dotenv").config();
 
-const app = express();
 app.use(express.json());
 app.use(cors());
 
@@ -16,14 +16,14 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post("/send-email", async (req, res) => {
-  const { name, email, subject, message } = req.body;
+  const { name, email, phone, company, subject, message } = req.body;
 
   const mailOptions = {
     from: `"${name}" <${email}>`,  // Shows user's name but uses your authenticated email
     replyTo: email,  // This ensures replies go to the user
-    to: "aman1007v@gmail.com", // Your business email where you receive messages
+    to: "saksamgupta4@gmail.com", // Your business email where you receive messages
     subject: "New Submission Form",
-    text: `Name: ${name}\nEmail: ${email}\nDesignation: ${subject}\nMessage: ${message}`,
+    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\nDesignation: ${subject}\nMessage: ${message}`,
   };
 
   try {

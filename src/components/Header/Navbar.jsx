@@ -6,13 +6,13 @@ const Navbar = () => {
   const navbarItems = ["Home", "Contact"];
 
   return (
-    <nav className="bg-gradient-to-r from-blue-500 to-purple-500 text-gray-300 p-2">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-500 to-purple-500 text-gray-300 p-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo and Title with Link */}
           <div className="flex items-center">
             <Link to="/" className="flex flex-col hover:opacity-90 transition-opacity">
-              <h1 className="text-xl font-bold">
+              <h1 className="text-xl font-bold font-[Tektur]">
                 <span className="text-white font-bold text-3xl">
                   Cogn<span className="underline">iq</span>Edge
                 </span>
@@ -58,19 +58,20 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Mobile Navigation Menu - Updated positioning */}
         <div 
           className={`${
             isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'
-          } md:hidden transition-all duration-200 ease-in-out absolute left-0 right-0 bg-gray-950/95 backdrop-blur-sm`}
+          } md:hidden transition-all duration-200 ease-in-out absolute left-0 right-0 top-full 
+        bg-gradient-to-r from-blue-500 to-purple-500 border-t border-white/10`}
         >
-          <div className="text-right px-4 pt-2 pb-3 space-y-1 border-t border-gray-800">
+          <div className="px-4 pt-2 pb-3 space-y-1">
             {navbarItems.map((item, index) => (
               <Link
                 key={index}
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className="block px-3 py-2 text-base font-medium text-gray-300 
-                         hover:text-purple-400 transition-colors duration-200"
+                className="block px-3 py-2 text-base font-medium text-white
+                       hover:bg-white/10 rounded-lg transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item}

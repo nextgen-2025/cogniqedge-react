@@ -9,7 +9,7 @@ const HeroSection = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh] text-center px-4 py-12 sm:p-6 md:p-34 bg-[#0F1625]">
-      <div className="space-y-8 sm:space-y-12 w-full">
+      <div className="space-y-8 sm:space-y-6 w-full">
         <h1 className="font-[Tektur] text-4xl sm:text-5xl md:text-5xl lg:text-6xl 
                      font-bold bg-gradient-to-r from-blue-400 to-purple-400 
                      bg-clip-text text-transparent max-w-6xl mx-auto 

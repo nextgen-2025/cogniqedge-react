@@ -114,12 +114,12 @@ const Form = () => {
     },
   ];
 
-  const API_BASE_URL = import.meta.env.REACT_APP_URL;
+  // const API_BASE_URL = import.meta.env.REACT_APP_URL;
 
-  fetch(`${API_BASE_URL}/api/data`)
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.error("Error:", error));
+  // fetch(`${API_BASE_URL}/api/data`)
+  //   .then((response) => response.json())
+  //   .then((data) => console.log(data))
+  //   .catch((error) => console.error("Error:", error));
 
   return (
     <div className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
